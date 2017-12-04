@@ -25,12 +25,12 @@ import { Component, OnInit, trigger, style, state, transition, animate, keyframe
           style({ offset: 0.15, opacity: 1, transform: 'translateX(0)' }),
           style({ offset: 0.86, opacity: 1, transform: 'translateX(0)' }),
 
-          style({ offset: 0.88, opacity: 1, transform: 'translateY(-10px)' }),
-          style({ offset: 0.90, opacity: 1, transform: 'translateY(10px)' }),
-          style({ offset: 0.92, opacity: 1, transform: 'translateY(-10px)' }),
-          style({ offset: 0.94, opacity: 1, transform: 'translateY(10px)' }),
-          style({ offset: 0.96, opacity: 1, transform: 'translateY(-10px)' }),
-          style({ offset: 0.98, opacity: 1, transform: 'translateY(10px)' }),
+          // style({ offset: 0.88, opacity: 1, transform: 'translateY(-10px)' }),
+          // style({ offset: 0.90, opacity: 1, transform: 'translateY(10px)' }),
+          // style({ offset: 0.92, opacity: 1, transform: 'translateY(-10px)' }),
+          // style({ offset: 0.94, opacity: 1, transform: 'translateY(10px)' }),
+          // style({ offset: 0.96, opacity: 1, transform: 'translateY(-10px)' }),
+          // style({ offset: 0.98, opacity: 1, transform: 'translateY(10px)' }),
         ])) // duração, delay e aceleração
       ])
     ])
@@ -53,11 +53,11 @@ export class AcessoComponent implements OnInit {
   }
 
   public inicioDaAnimacao(): void {
-    console.log('inicio da animacao!')
+    // console.log('inicio da animacao!')
   }
 
   public fimDaAnimacao(): void {
-    console.log('Fim da animacao!')
+    // console.log('Fim da animacao!')
   }
 
 }
