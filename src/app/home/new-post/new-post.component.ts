@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import * as firebase from 'firebase';
 
 import { Observable } from 'rxjs/Observable';
@@ -8,6 +8,7 @@ import 'rxjs/Rx';
 import { FormGroup, FormControl } from '@angular/forms';
 import { BdService } from './../../bd.service';
 import { ProgressService } from '../../progress.service';
+import { } from '@angular/core/src/event_emitter';
 
 @Component({
   selector: 'app-new-post',
@@ -16,11 +17,13 @@ import { ProgressService } from '../../progress.service';
 })
 export class NewPostComponent implements OnInit {
 
+  @Output() attTimeLine: EventEmitter<any> = new EventEmitter<any>();
+
   public email: string;
   private image: any;
 
-  public progessPost: string = 'Pendente';
-  public percentupload: number = 0;
+  public progressPost: string = 'Pendente';
+  public percentUpload: number = 0;
 
   public form: FormGroup = new FormGroup({
     'titulo': new FormControl(null),
@@ -54,12 +57,15 @@ export class NewPostComponent implements OnInit {
       .takeUntil(continua)
       .subscribe(
       () => {
-        console.log(this.progress.status)
-        console.log(this.progress.state)
-        this.progessPost = 'Andamento';
+        this.progressPost = 'Andamento';
+        this.percentUpload = Math.round((this.progress.state.bytesTransferred / this.progress.state.totalBytes) * 100);
         if (this.progress.status === 'Concluido') {
+          this.progressPost = 'Concluido';
           continua.next(false);
-          this.progessPost = 'Concluido';
+
+          // emitir evento para o componente pai
+          this.attTimeLine.emit();
+
         }
       })
   }

@@ -13,7 +13,6 @@ import config from './fbconfig';
 export class AppComponent implements OnInit {
 
   ngOnInit(): void {
-
     firebase.initializeApp(config);
   }
 }

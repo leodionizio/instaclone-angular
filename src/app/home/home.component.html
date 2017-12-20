@@ -12,6 +12,6 @@
 <br />
 <br />
 <div class="container">
-  <app-posts></app-posts>
-  <app-new-post></app-new-post>
+  <app-posts #posts></app-posts>
+  <app-new-post (attTimeLine)="attTimeLine()"></app-new-post>
 </div>
