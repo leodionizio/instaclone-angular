@@ -1,7 +1,7 @@
 ## InstaClone
 #### Clone do Instagram desenvolvido com o framework Angular na versão 4, utilizando animations e Firebase como Baas
 
-<img src="http://pngimg.com/uploads/instagram/instagram_PNG10.png">
+<img src="http://pngimg.com/uploads/instagram/instagram_PNG10.png" width="150">
 
 #### Ferramentas Utilizadas
 - **[Angular](https://angular.io/)**
